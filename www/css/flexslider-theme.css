@@ -1,0 +1,42 @@
+.flex-control-nav {
+  top: 20px;
+}
+
+.flex-control-nav li {}
+  
+.flex-control-paging li a {
+  background: #e60012;
+  background: rgba(230, 0, 18, 1);
+}
+  
+.flex-control-paging li a:hover {
+  background: #fff;
+  background: rgba(255, 255, 255, 1);
+}
+  
+.flex-control-paging li a.flex-active {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.flex-slider .slides > .li {
+  position: relative;
+}
+
+.flex-caption {
+  position: absolute;
+  bottom: 0px;
+  width: 742px;
+  background: rgba(230,0,18,.8);
+}
+
+.flex-caption, .flex-caption a {
+  color: #fff;
+}
+
+.flex-caption h2, .flex-caption p {
+  padding-left: 2%;
+}
+
+  
+  

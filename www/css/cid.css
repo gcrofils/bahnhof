@@ -1,0 +1,119 @@
+a {
+  color: #000;
+}
+
+.cid-ad-grey {
+  background: #dadbdb;
+}
+
+.home-block {
+  font-size: 12px;
+}
+
+.home-block p {
+  margin-bottom:2px;
+}
+
+.home-block h2 {
+  line-height: 30px;
+}
+
+.home-block .home-post-author, .home-block .home-post-published{
+  font-style: italic;
+  color: #9fa0a0;
+}
+
+.home-block-reverse .home-post-author, .home-block-reverse .home-post-published {
+  color: #fff;
+}
+  
+
+.home-post-summary {
+  
+}
+
+.home-block-business .category-color {
+  color: #e60012;
+}
+
+.home-block-industry .category-color {
+  color: #009cbf;
+}
+
+.home-block-internet .category-color {
+  color: #4ab134;
+}
+
+.home-block-society .category-color {
+  color: #9c0183;
+}
+
+
+.home-block-border, .home-block-reverse {
+  padding: 10px 20px 20px 20px;
+}
+
+.home-block-border {
+  border: #fff solid 1px;
+}
+
+
+
+.home-block-reverse {
+  color: #fff;
+}
+
+.home-block-reverse .category-color {
+  color: #000;
+}
+
+.home-block-business {
+  border-color: #f08300;
+  background: #ffc;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-block-policy {
+  border: #f08300 solid 1px;
+  background: #f08300;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.home-block-oneroadonebelt {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: #5cc2cf solid 1px;
+  background: #5cc2cf;
+}
+
+.home-block-environment {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: #68be83 solid 1px;
+  background: #68be83;
+
+}
+
+.home-post-group {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.home-post-item {
+  position: relative;
+  display: block;
+  padding: 10px 0px;
+  margin-bottom: -1px;
+}
+.home-post-item:first-child {
+  padding: 0px;
+}
+.home-post-item:last-child {
+  margin-bottom: 0;
+}
+

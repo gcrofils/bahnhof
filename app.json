@@ -1,0 +1,7 @@
+{
+  "name": "Bahnhof",
+  "description": "Website and App for China India Dialogue",
+  "repository": "https://github.com/secondbureau/bahnhof",
+  "logo": "http://ionicframework.com/img/ionic-logo-blog.png",
+  "keywords": ["ionic", "static"]
+}

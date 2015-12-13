@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'daxbold';
+    src: url('/fonts/dax-bold-webfont.eot');
+    src: url('/fonts/dax-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/dax-bold-webfont.woff2') format('woff2'),
+         url('/fonts/dax-bold-webfont.woff') format('woff'),
+         url('/fonts/dax-bold-webfont.ttf') format('truetype'),
+         url('/fonts/dax-bold-webfont.svg#daxbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1, h2 {
+  font-family: 'daxbold', 'arial', 'verdana';
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 35px;
+  
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.row-height {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+.col-height {
+  display: table-cell;
+  float: none;
+  height: 100%;
+}

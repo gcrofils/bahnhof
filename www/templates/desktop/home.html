@@ -1,0 +1,41 @@
+<div>
+<div class='row'>
+  <div class='col-md-8' ng-include="'/templates/desktop/home.slider.html'" data-onload="get('spotlight', 5)" ng-controller='HomeCategoryCtrl'></div>
+  <div class='col-md-4'>
+    <center><img src='/img/cid/issue.png' class="img-responsive" /></center>
+  </div>
+</div>
+
+<div class='row'>
+    <div class="row-height">
+      <div class='col-md-8 col-height' ng-include="'/templates/desktop/home.category.html'" data-onload="get('business', 2)" ng-controller='HomeCategoryCtrl'></div>
+      <div class='col-md-4 col-height' ng-include="'/templates/desktop/home.category.html'" data-onload="get('policy', 1)" ng-controller='HomeCategoryCtrl'></div>
+    </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-4' ng-repeat="slug in ['industry', 'internet', 'society']" ng-include="'/templates/desktop/home.category.html'" data-onload="get(slug, 3)" ng-controller='HomeCategoryCtrl'></div>
+</div>
+
+<div class='row'>
+  <div class='col-md-4'>
+    <center><img src='/img/cid/ad2.png' class="img-responsive" /></center>
+  </div>
+  <div class='col-md-8'>
+    <center class='cid-ad-grey'><img src='/img/cid/ad1.png' class="img-responsive" /></center>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-12'>
+    Column
+  </div>
+</div>
+
+<div class='row'>
+  <div class="row-height">
+    <div class='col-md-6  col-height' ng-repeat="slug in ['oneroadonebelt', 'environment']" ng-include="'/templates/desktop/home.category.html'" data-onload="get(slug, 1)" ng-controller='HomeCategoryCtrl'></div>
+  </div>
+</div>
+
+</div>
