@@ -7,7 +7,7 @@ angular.module('bahnhof.services')
   // Some fake testing data
   var categories = [];
   
-  var categories_endpoint = ENV.apiEndpoint + "/categories"
+  var categories_endpoint = ENV.apiEndpoint + "categories"
 
   return {
     all: function() {

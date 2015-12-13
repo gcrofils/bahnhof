@@ -6,7 +6,7 @@ angular.module('bahnhof.services')
 
   var posts = [];
   
-  var posts_endpoint = ENV.apiEndpoint + "/posts";
+  var posts_endpoint = ENV.apiEndpoint + "posts";
 
   return {
     
