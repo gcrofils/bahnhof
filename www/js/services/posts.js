@@ -2,16 +2,16 @@ angular.module('bahnhof.services')
 
 
 
-.factory('Posts', ['$filter', '$http',  function($filter, $http) {
+.factory('Posts', ['$filter', '$http', 'ENV',  function($filter, $http, ENV) {
 
-  posts = [];
+  var posts = [];
   
-  api_endpoint = 'http://localhost:4567/posts'
+  var posts_endpoint = ENV.apiEndpoint + "/posts";
 
   return {
     
     all: function(){
-      return $http.get(api_endpoint).then(function(response){
+      return $http.get(posts_endpoint).then(function(response){
         posts = response.data;
         return posts;
       });
@@ -23,7 +23,7 @@ angular.module('bahnhof.services')
     getbyCategory: function(categoryId, offset, limit) {
       //return $filter('filter')(posts, {category_id: categoryId}, true);
       return $http({
-          url: api_endpoint, 
+          url: posts_endpoint, 
           method: "GET",
           params: {category_id: categoryId, offset: offset, limit: limit}
        }).then(function(response){
