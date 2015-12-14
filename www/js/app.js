@@ -56,7 +56,7 @@ angular.module('bahnhof', ['ionic', 'bahnhof.controllers', 'bahnhof.services', '
       views: {
         '': {
           templateUrl: 'templates/desktop/post.html',
-          controller: 'PostsCtrl'
+          controller: 'PostCtrl'
         }
       }
     })

@@ -1,3 +1,49 @@
+.logo-partner {
+  margin: 0 15px 0 15px;
+}
+
+.cid-header {
+  height: 150px;
+  overflow: hidden;
+  background: #000 url('/img/cid/header-bg.png');
+}
+
+.cid-footer {
+  color: #fff;
+  font-family: dax, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.cid-footer1 {
+  margin-top: 30px;
+  padding: 20px 0 20px 0;
+  min-height: 150px;
+  overflow: hidden;
+  background: #595757;
+}
+
+.cid-footer1 ul.nav {
+  padding-top: 23px;
+}
+
+.cid-footer1 .nav > li > a {
+  color: #fff;
+  padding: 0;
+}
+
+.cid-footer1 .nav > li > a:hover{
+  color: #595757;
+}
+
+
+.cid-footer2 {
+  min-height: 30px;
+  background: #000;
+}
+
+.cid-footer2 p {
+  padding-top: 10px;
+}
+
 a {
   color: #000;
 }

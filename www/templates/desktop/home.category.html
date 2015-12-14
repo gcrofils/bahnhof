@@ -10,7 +10,7 @@
       <div class="home-block-contents" >
         <ul class="home-post-group">
           <li class="home-post-item" ng-repeat="post in posts">
-            <h3 class="home-post-title"><a href="#/posts/{{post.slug}}">{{post.title}}</a></h3>
+            <h3 class="home-post-title"><a href="#/post/{{post.slug}}">{{post.title}}</a></h3>
             <p><span class="category-color"><i>By</i></span> <span class="home-post-author">{{post.author}}</span> <span class="home-post-published">{{post.published_at}}</span></p>
             <p class="home-post-summary">{{post.summary}}</p>
             <img ng-if="category.show_featured_on_home == true" class="img-responsive" ng-src="{{post.featured_image_url}}" />
@@ -42,7 +42,7 @@
             <h2 class="category-color">{{category.label}}</h2>
           </div>
           <div class="home-block-contents" >
-            <h3 class="home-post-title"><a href="#/posts/{{post.slug}}">{{post.title}}</a></h3>
+            <h3 class="home-post-title"><a href="#/post/{{post.slug}}">{{post.title}}</a></h3>
             <p><span class="category-color"><i>By</i></span> <span class="home-post-author">{{post.author}}</span> <span class="home-post-published">{{post.published_at}}</span></p>
             <p class="home-post-summary">{{post.summary}}</p>
           </div>
@@ -63,7 +63,7 @@
         <div class="home-block-contents" >
           <ul class="home-post-group">
             <li class="home-post-item" >
-              <h3 class="home-post-title"><a href="#/posts/{{post.slug}}">{{post.title}}</a></h3>
+              <h3 class="home-post-title"><a href="#/post/{{post.slug}}">{{post.title}}</a></h3>
               <p><span class="category-color"><i>By</i></span> <span class="home-post-author">{{post.author}}</span> <span class="home-post-published">{{post.published_at}}</span></p>
               <p class="home-post-summary">{{post.summary}}</p>
             </li>
@@ -86,7 +86,7 @@
             <img ng-src="/img/cid/columnist-{{post.author_id}}.png" class="pull-left">
             <ul class="home-post-group">
               <li class="home-post-item" >
-                <h3 class="home-post-title"><a href="#/posts/{{post.slug}}">{{post.title}}</a></h3>
+                <h3 class="home-post-title"><a href="#/post/{{post.slug}}">{{post.title}}</a></h3>
                 <p><span class="home-post-author">{{post.author}}</span></p>
                 <p class="home-post-summary">{{post.summary}}</p>
               </li>

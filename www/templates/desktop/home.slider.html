@@ -4,7 +4,7 @@
       <li ng-repeat="post in posts">
         <img ng-src="{{post.featured_image_url}}" />
         <div class="flex-caption">
-          <h2><a href="#/posts/{{post.slug}}">{{post.title}}</a></h2>
+          <h2><a href="#/post/{{post.slug}}">{{post.title}}</a></h2>
           <p>By<span class="home-post-author">{{post.author}}</span><span class="home-post-published">{{post.published_at}}</span></p>
         </div>
       </li>

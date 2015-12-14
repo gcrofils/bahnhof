@@ -1,14 +1,27 @@
 angular.module('bahnhof.controllers', [])
 
-.controller('NavCtrl', function($scope, $stateParams, Categories) {
-  Categories.all().then(function(categories){
+
+
+.controller('bahnhofCtrl', function($scope, $stateParams, Categories) {
+  $scope.categories = Categories.all();
+})
+
+.controller('HomeCtrl', function($scope, $document, Categories, Posts) {
+})
+
+.controller('CategoriesCtrl', function($scope, $stateParams, Categories) {
+  $scope.categories.then(function(categories){
     $scope.categories = categories;
   });
 })
 
+.controller('CategoryCtrl', function($scope, $stateParams, Categories) {
+  $scope.categories.then(function(categories){
+    $scope.category = Categories.get($stateParams.categorySlug);
+  });
+})
 
-.controller('HomeCtrl', function($scope, $document, Categories, Posts) {
-  $scope.categories = Categories.all();
+.controller('PostCtrl', function($scope, $stateParams, Posts) {
 })
 
 .controller('HomeCategoryCtrl', function($scope, $document, Categories, Posts) {

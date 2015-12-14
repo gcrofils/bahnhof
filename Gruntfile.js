@@ -41,7 +41,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'www/css/app.min.css': ['www/css/vendor/bootstrap.css', 'www/css/vendor/flexslider.css', 'www/css/style.css', 'www/css/flexslider-theme.css', 'www/css/fonts.css', 'www/css/cid.css']
+          'www/css/app.min.css': ['www/css/bootstrap.css', 'www/css/flexslider.css', 'www/css/style.css', 'www/css/flexslider-theme.css', 'www/css/fonts.css', 'www/css/cid.css']
         }
       }
     },
