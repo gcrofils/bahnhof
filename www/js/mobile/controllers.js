@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('bahnhof.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('templates/mobile/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -41,6 +41,10 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('bahnhofCtrl', function($scope, $stateParams, Categories) {
+  $scope.categories = Categories.all();
+})
+
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
@@ -50,6 +54,30 @@ angular.module('starter.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+})
+
+.controller('CategoriesCtrl', function($scope, Categories) {
+  $scope.loading = true;
+  $scope.categories.then(function(categories){
+    $scope.loading = false;
+    $scope.categories = categories;
+  });
+})
+
+
+.controller('CategoryPostsCtrl', function($scope, $stateParams, Categories, Posts) {
+  $scope.categories.then(function(categories){
+    $scope.category = Categories.get($stateParams.categorySlug);
+    Posts.getbyCategory($scope.category.id, 0, 20).then(function(response){
+      $scope.posts = response.data;
+    });
+  });
+})
+
+.controller('PostsCtrl', function($scope, $stateParams, Posts) {
+  Posts.getbyId($stateParams.postId).then(function(post){
+    $scope.post = post;
+  });
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
