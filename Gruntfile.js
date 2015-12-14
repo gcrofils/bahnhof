@@ -36,11 +36,14 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+        sourceMap: true
       },
       build: {
-        src: 'www/js/app.js',
-        dest: 'www/js/app.min.js'
+        files: {
+          'www/js/app.min.js': ['lib/ionic/js/ionic.bundle.js', 'js/vendor/jquery.min.js', 'js/vendor/jquery.flexslider.min.js', 'js/app.js', 'js/config.js', 'js/controllers.js', 'js/services.js', 'js/services/posts.js', 'js/services/categories.js'],
+          'www/css/app.min.css': ['css/vendor/bootstrap.min.css', 'css/vendor/flexslider.css', 'css/style.css', 'css/flexslider-theme.css', 'css/fonts.css', 'css/cid.css']
+        }
       }
     }
   });
