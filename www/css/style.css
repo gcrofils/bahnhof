@@ -1,8 +1,13 @@
+body {
+  font-family: crimson, "Times New Roman", Times, serif;
+}
 
+h1, h2, h3 {
+  font-family: dax, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 h1, h2 {
-  font-family: 'daxbold', 'arial', 'verdana';
-  font-weight: normal;
+  font-weight: bold;
 }
 
 h1 {
