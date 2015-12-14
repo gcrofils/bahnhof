@@ -8,6 +8,7 @@ a {
 
 .home-block {
   font-size: 12px;
+  width:100%;
 }
 
 .home-block p {
@@ -21,6 +22,35 @@ a {
 .home-block .home-post-author, .home-block .home-post-published{
   font-style: italic;
   color: #9fa0a0;
+}
+
+.home-block-column .home-post-author {
+  font-style: normal;
+  font-size: 15px;
+}
+
+.home-block-column .home-post-group {
+  margin-left: 95px;
+}
+
+.home-block-column .home-block-contents {
+  padding-right: 20px;
+}
+
+.home-block-oneroadonebelt .home-block-contents, .home-block-environment .home-block-contents {
+  padding-bottom: 10px;
+}
+
+.home-block-oneroadonebelt .home-block-contents .img-featured, .home-block-environment .home-block-contents .img-featured {
+  margin-top:20px;
+}
+
+.home-block-column .home-post-author:before {
+  content: " ";
+  display: inline-block;
+  width: 29px;
+  height: 16px;
+  background: url('/img/cid/twitter-icon.png');
 }
 
 .home-block-reverse .home-post-author, .home-block-reverse .home-post-published {
@@ -48,8 +78,20 @@ a {
   color: #9c0183;
 }
 
+.home-block-column .category-color {
+  color:#5cc2cf;
+}
 
-.home-block-border, .home-block-reverse {
+.home-block-culture .category-color {
+  color:#a9cf52;
+}
+
+.home-block-travel .category-color {
+  color:#9c0183;
+}
+
+
+.home-block-border, .home-block-reverse, .home-block-column {
   padding: 10px 20px 20px 20px;
 }
 
@@ -57,7 +99,10 @@ a {
   border: #fff solid 1px;
 }
 
-
+.home-block-column {
+  padding-right: 0px;
+  background-image: url('/img/cid/column-bg.png');
+}
 
 .home-block-reverse {
   color: #fff;
@@ -67,10 +112,13 @@ a {
   color: #000;
 }
 
+.home-block-reverse h2.category-color, .home-block-reverse h3 a {
+  color: #fff;
+}
+
 .home-block-business {
   border-color: #f08300;
-  background: #ffc;
-  height: 100%;
+  background: #fff;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -78,13 +126,13 @@ a {
 .home-block-policy {
   border: #f08300 solid 1px;
   background: #f08300;
-  height: 100%;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0;;
 }
 
+
+
 .home-block-oneroadonebelt {
-  height: 100%;
   margin-top: 0;
   margin-bottom: 0;
   border: #5cc2cf solid 1px;
@@ -92,7 +140,6 @@ a {
 }
 
 .home-block-environment {
-  height: 100%;
   margin-top: 0;
   margin-bottom: 0;
   border: #68be83 solid 1px;
@@ -117,3 +164,14 @@ a {
   margin-bottom: 0;
 }
 
+@media (min-width: 992px) {
+.section-separator {
+  height: 50px;
+}
+}
+
+@media (max-width: 992px) {
+  .home-block {
+    margin: 20px 0;
+  }
+}
