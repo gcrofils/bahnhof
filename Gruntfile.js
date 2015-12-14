@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       options: {
         space: '  ',
         wrap: '"use strict";\n\n {%= __ngModule %}',
-        name: 'config',
+        name: 'bahnhof.config',
       },
       // Environment targets
       development: {
@@ -34,30 +34,46 @@ module.exports = function(grunt) {
         }
       }
     },
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'www/css/app.min.css': ['www/css/vendor/bootstrap.css', 'www/css/vendor/flexslider.css', 'www/css/style.css', 'www/css/flexslider-theme.css', 'www/css/fonts.css', 'www/css/cid.css']
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-        sourceMap: true
+        sourceMap: true, 
+        beautify : true,
+        mangle   : false
       },
       build: {
         files: {
-          'www/js/app.min.js': ['lib/ionic/js/ionic.bundle.js', 'js/vendor/jquery.min.js', 'js/vendor/jquery.flexslider.min.js', 'js/app.js', 'js/config.js', 'js/controllers.js', 'js/services.js', 'js/services/posts.js', 'js/services/categories.js'],
-          'www/css/app.min.css': ['css/vendor/bootstrap.min.css', 'css/vendor/flexslider.css', 'css/style.css', 'css/flexslider-theme.css', 'css/fonts.css', 'css/cid.css']
+          'www/js/app.min.js': ['www/js/app.js', 'www/js/config.js', 'www/js/controllers.js', 'www/js/services.js', 'www/js/services/posts.js', 'www/js/services/categories.js']
         }
       }
     }
   });
 
+          
+        
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-ng-constant');
 
   // Default task(s).
   grunt.registerTask('default', ['uglify']);
   
   grunt.registerTask('build', [
+    'ngconstant:production',
     'uglify',
-    'ngconstant:production'
+    'cssmin'
   ]);
 
 };
