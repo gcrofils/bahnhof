@@ -1,1 +1,30 @@
-<h1>{{category.label}}</h1>
+<div class='row'>
+  <div class="clearfix"></div>
+  
+  <div class='col-md-8 col-md-offset-1'>
+    <div class="posts-container">
+      <ul class="posts-group">
+        <li class="posts-item" endless-scroll="post in posts">
+          <div class="row">
+            <div class="col-md-3"><img class="img-responsive" ng-src="{{post.featured_image_url}}" /></div>
+            <div class="col-md-9">
+              <h3 class="post-title"><a href="#/post/{{post.slug}}">{{post.title}}</a></h3>
+              <p>
+                <span class="category-color"><i>By</i></span>
+                <span class="post-author">{{post.author}}</span>
+                <span class="post-published">{{post.published_at}}</span>
+              </p>
+              <p class="home-post-summary">{{post.summary}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <p ng-show="loading" class="text-center">
+        Loading...
+      </p>
+    </div>
+  </div>
+  <div class='col-md-2'>
+    REFINE SEARCH
+  </div>
+  

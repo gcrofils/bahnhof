@@ -19,7 +19,7 @@
     <div class="container">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" ng-controller="CategoriesCtrl">
-          <li ng-repeat="category in categories |  filter:{navbar: true}:true  ">
+          <li ng-class="{ active: isActive('/category/{{category.slug}}')}" ng-repeat="category in categories |  toArray | filter:{navbar: true}:true  ">
             <a href="#/category/{{category.slug}}">{{category.label}}</a>
           </li>
         </ul>

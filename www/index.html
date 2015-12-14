@@ -5,20 +5,36 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="css/app.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/flexslider-theme.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/cid.css" rel="stylesheet">
+    
+    
+
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/toArrayFilter.js"></script>
+    <script src="lib/ionic/js/angular/angular-endless-scroll.js"></script>
+
+    <!-- your app's js -->
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/jquery.flexslider.min.js"></script>
-    <script src="js/app.min.js"></script>
+    <script src="js/desktop/app.js"></script>
+    <script src="js/config-dev.js"></script>
+    <script src="js/desktop/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/services/posts.js"></script>
+    <script src="js/services/categories.js"></script>
     
 
   </head>
-  <body ng-app="bahnhof">
+  <body ng-app="bahnhof" ng-controller="bahnhofCtrl">
     
     <div ng-include="'/templates/desktop/navbar.html'"></div>
+    <div class="container"><div ui-view></div></div>
+    <div ng-include="'/templates/desktop/footer.html'"></div>
     
-    <div class="container">
-      <div ui-view></div>
-    </div>
   </body>
 </html>

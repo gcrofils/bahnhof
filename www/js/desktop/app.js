@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('bahnhof', ['ionic', 'bahnhof.controllers', 'bahnhof.services', 'bahnhof.config', 'angular-toArrayFilter', 'dc.endlessScroll'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,56 +29,42 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/mobile/tabs.html"
-    })
 
-    // Each tab has its own nav history stack:
 
-    .state('tab.dash', {
-      url: '/dash',
+    .state('home', {
+      url: '/home',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/mobile/tab-dash.html',
-          controller: 'DashCtrl'
+        '': {
+          templateUrl: 'templates/desktop/home.html',
+          controller: 'HomeCtrl'
         }
       }
     })
-
-    .state('tab.friends', {
-      url: '/friends',
+    
+    .state('category', {
+      url: '/category/:categorySlug',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/mobile/tab-friends.html',
-          controller: 'FriendsCtrl'
+        '': {
+          templateUrl: 'templates/desktop/category.html',
+          controller: 'CategoryCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    
+    .state('post', {
+      url: '/post/:postSlug',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/mobile/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        '': {
+          templateUrl: 'templates/desktop/post.html',
+          controller: 'PostCtrl'
         }
       }
     })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/mobile/tab-account.html',
-          controller: 'AccountCtrl'
-        }
-      }
-    });
+    
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/home');
 
 });
+
 

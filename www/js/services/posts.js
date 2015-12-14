@@ -28,7 +28,7 @@ angular.module('bahnhof.services')
           params: {category_id: categoryId, offset: offset, limit: limit}
        }).then(function(response){
         posts = response.data;
-        return posts;
+        return response;
       });
     }
   }
