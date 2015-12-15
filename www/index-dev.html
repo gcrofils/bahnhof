@@ -27,10 +27,11 @@
     <script src="js/services.js"></script>
     <script src="js/services/posts.js"></script>
     <script src="js/services/categories.js"></script>
+    <script src="js/directives/scroll.js"></script>
     
 
   </head>
-  <body ng-app="bahnhof" ng-controller="bahnhofCtrl">
+  <body ng-app="bahnhof" ng-controller="bahnhofCtrl" bh-scroll-top="100" ng-class="{'navbar-minified':minifyNavbar}">
     
     <div ng-include="'/templates/desktop/navbar.html'"></div>
     <div class="container"><div ui-view></div></div>

@@ -2,11 +2,75 @@
   margin: 0 15px 0 15px;
 }
 
+body {
+  margin: 210px;
+}
+
 .cid-header {
   height: 150px;
   overflow: hidden;
   background: #000 url('/img/cid/header-bg.png');
 }
+
+.navbar {
+  font-family: dax, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.navbar-default {
+  background: #fff;
+}
+
+.navbar-brand {
+  padding-top:0px;
+  display:none;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #000;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #e60012;
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover {
+  color: #e60012;
+  background: url('/img/cid/menu-decoration.png') center bottom no-repeat;
+}
+
+.navbar-default .navbar-nav>.active {
+  background-color: #fff;
+}
+  
+
+body.navbar-minified .cid-header{
+  display:none;
+}
+
+body.navbar-minified .navbar-brand {
+  display:block;
+}
+
+body.navbar-minified .navbar-default {
+  background: #000;
+  color: #fff;
+}
+
+body.navbar-minified .navbar-default .navbar-nav>li>a {
+  color: #fff;
+}
+
+body.navbar-minified .navbar-default .navbar-nav>.active>a, 
+body.navbar-minified .navbar-default .navbar-nav>.active>a:focus, 
+body.navbar-minified .navbar-default .navbar-nav>.active>a:hover {
+  color: #e60012;
+  background-image: url ('/img/cid/menu-decoration.png');
+  background-position: center bottom;
+}
+
+
 
 .cid-footer {
   color: #fff;
@@ -222,5 +286,14 @@ a {
 @media (max-width: 992px) {
   .home-block {
     margin: 20px 0;
+  }
+  .cid-header {
+    display:none;
+  }
+  .navbar-brand {
+    display:block;
+  }
+  body {
+    margin: 60px 0;
   }
 }

@@ -2,6 +2,8 @@ var express = require('express'),
     app = express();
 
 app.use(express.static('www'));
+// npm install prerender-node --save
+//app.use(require('prerender-node'));
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
 app.all('*', function(req, res, next) {
