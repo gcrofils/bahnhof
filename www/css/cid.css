@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 210px;
+  margin: 210px 0;
 }
 
 .cid-header {
@@ -29,13 +29,26 @@ body {
   color: #000;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:hover,
+body.navbar-minified .navbar-default .navbar-nav>li>a:hover {
   color: #e60012;
+}
+
+body.navbar-minified .navbar-default .navbar-nav>li>a {
+  color: #fff;
+}
+
+body.navbar-minified .navbar-default {
+  background: #000;
+  color: #fff;
 }
 
 .navbar-default .navbar-nav>.active>a, 
 .navbar-default .navbar-nav>.active>a:focus, 
-.navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav>.active>a:hover, 
+body.navbar-minified .navbar-default .navbar-nav>li.active>a,
+body.navbar-minified .navbar-default .navbar-nav>a:focus,
+body.navbar-minified .navbar-default .navbar-nav>a:hover {
   color: #e60012;
   background: url('/img/cid/menu-decoration.png') center bottom no-repeat;
 }
@@ -53,22 +66,7 @@ body.navbar-minified .navbar-brand {
   display:block;
 }
 
-body.navbar-minified .navbar-default {
-  background: #000;
-  color: #fff;
-}
 
-body.navbar-minified .navbar-default .navbar-nav>li>a {
-  color: #fff;
-}
-
-body.navbar-minified .navbar-default .navbar-nav>.active>a, 
-body.navbar-minified .navbar-default .navbar-nav>.active>a:focus, 
-body.navbar-minified .navbar-default .navbar-nav>.active>a:hover {
-  color: #e60012;
-  background-image: url ('/img/cid/menu-decoration.png');
-  background-position: center bottom;
-}
 
 
 

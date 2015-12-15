@@ -1,4 +1,4 @@
-angular.module('bahnhof.directives', [])
+angular.module('bahnhof.directives')
 
 .directive("bhScrollTop", function ($window) {
   return function(scope, element, attrs) {
@@ -13,4 +13,4 @@ angular.module('bahnhof.directives', [])
       scope.$apply();
     });
   };
-});
+})

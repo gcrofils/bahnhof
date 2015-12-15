@@ -23,21 +23,28 @@
         <li ng-class="{ active: isActive('/category/{{category.slug}}')}" ng-repeat="category in categories |  toArray | filter:{navbar: true}:true  ">
           <a href="#/category/{{category.slug}}">{{category.label}}</a>
         </li>
-        <li class="dropdown pull-right">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+        <li ng-controller="DropdownCtrl" class="dropdown" uib-dropdown>
+          <a href uib-dropdown-toggle role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="caret"></span>
+          </a>
+          <ul class="uib-dropdown-menu">
+            <li><a href>This month features</a></li>
+            <li ng-repeat="category in categories |  toArray | filter:{additional_navbar: true}:false  ">
+              <a href="#/category/{{category.slug}}">{{category.label}}</a>
+            </li>
+            <li><a href>About Us</a></li>
+            <li><a href>Archives</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
   
 </nav>
+
+        
+
+
+
 
