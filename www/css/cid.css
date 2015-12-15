@@ -275,6 +275,67 @@ a {
   margin:0px;
 }
 
+ul.social {
+  font-family: dax, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding-left: 0;
+  margin: 20px 0 20px;
+}
+
+ul.social > li {
+  font-size: 15px;
+  height: 60px;
+  position: relative;
+  display: block;
+  padding: 20px 0;
+  margin-bottom: 0px;
+  background-color: #fff;
+  border-bottom: 1px solid #c9caca;
+}
+
+ul.social > li:last-child {
+  border-bottom: none;
+  padding-top: 0;
+}
+
+ul.social > li:before {
+  content: " ";
+  display: block;
+  width: 28px;
+  height: 27px;
+  float: left;
+  margin: -5px 20px 0 0;
+  
+}
+
+li.social-facebook:before {
+  background: url('/img/cid/icon-facebook.png') no-repeat;
+}
+
+li.social-twitter:before {
+  background: url('/img/cid/icon-twitter.png') no-repeat;
+}
+
+li.social-email:before {
+  background: url('/img/cid/icon-email.png') no-repeat;
+}
+
+li.social-print:before {
+  background: url('/img/cid/icon-print.png') no-repeat;
+}
+
+li.social-wechat > div > p {
+  font-size: 10px;
+}
+
+li.social-wechat > div > img {
+  margin-right:3px;
+}
+
+li.social-wechat > div > p > span {
+  color: #8dc81b;
+}
+
+
 @media (min-width: 992px) {
 .section-separator {
   height: 50px;

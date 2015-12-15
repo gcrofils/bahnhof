@@ -17,9 +17,9 @@ angular.module('bahnhof.services')
       });
     },
     
-    getbyId: function(postId) {
+    getBySlug: function(slugId) {
       return $http({
-          url: posts_endpoint + '/' + postId, 
+          url: posts_endpoint + '/' + slugId, 
           method: "GET"
        }).then(function(response){
         return response.data.post[0];

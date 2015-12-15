@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="post-title">{{vm.post.title}}</h1>
+    <p>
+      <span class="category-color"><i>By</i></span>
+      <span class="post-author">{{vm.post.author}}</span>
+      <span class="post-published">{{vm.post.published_at}}</span>
+    </p>
+  </div>
+  <div class="clearfix"></div>
+  <div class="col-md-12">
+    <img class="img-responsive" ng-src="{{vm.post.featured_image_url}}" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <ul class="social">
+      <li class="social-facebook">Facebook</li>
+      <li class="social-twitter">Twitter</li>
+      <li class="social-email">Email</li>
+      <li class="social-print">Printing</li>
+      <li class="social-wechat">
+        <img class="qr-code" src="/img/cid/qrcode-demo.png">
+        <br/>
+        <span>Scan QR Code</span>
+        <div>
+          <img src="/img/cid/icon-wechat.png" class="pull-left">
+          <p>to share this article on <span>Wechat</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-10">
+    <div class="post-body" ng-bind-html="vm.post.body"></div>
+  </div>
+</div>

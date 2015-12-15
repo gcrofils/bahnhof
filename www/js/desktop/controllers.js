@@ -51,9 +51,6 @@ angular.module('bahnhof.controllers', [])
   load($stateParams.page ? parseInt($stateParams.page, 10) : 1);
 })
 
-.controller('PostCtrl', function($scope, $stateParams, Posts) {
-})
-
 .controller('HomeCategoryCtrl', function($scope, $document, Categories, Posts) {
   $scope.get = function(categorySlug, limit) {
   $scope.categories.then(function(){
