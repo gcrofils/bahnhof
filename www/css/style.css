@@ -23,6 +23,10 @@ h3 {
   font-size: 20px;
 }
 
+p.loading {
+  position: relative;
+}
+
 @media (min-width: 992px) {
 .row-eq-height {
   display: -webkit-box;
