@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>China India Dialogue</title>
+    <title>China India Dialogue | DEV </title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/flexslider.css" rel="stylesheet">
@@ -25,6 +25,7 @@
     <!-- your app's js -->
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/jquery.flexslider.min.js"></script>
+    <script src="js/vendor/holder.min.js"></script>
     
     <script src="js/desktop/app.js"></script>
     <script src="js/config.js"></script>
@@ -32,17 +33,19 @@
     <script src="js/services.js"></script>
     <script src="js/services/posts.js"></script>
     <script src="js/services/categories.js"></script>
+    <script src="js/services/preloader.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/directives/bh-app-loading.js"></script>
     <script src="js/directives/bh-scroll-top.js"></script>
     <script src="js/directives/bh-post.js"></script>
+    <script src="js/directives/bh-holder.js"></script>
     
     
   </head>
   <body ng-app="bahnhof" ng-controller="bahnhofCtrl" bh-scroll-top="100" ng-class="{'navbar-minified':minifyNavbar}">
     
     <div ng-include="'/templates/desktop/navbar.html'"></div>
-    <div class="container">
+    <div class="container main-container">
       <div ui-view></div>
     </div>
 
