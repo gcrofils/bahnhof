@@ -6,6 +6,9 @@ body {
   padding: 210px 0 0 0;
 }
 
+.main-container {
+}
+
 .cid-header {
   height: 150px;
   overflow: hidden;
@@ -39,7 +42,7 @@ body.navbar-minified .navbar-default .navbar-nav>li>a {
 }
 
 body.navbar-minified .navbar-default {
-  background: #000;
+  background: #231916;
   color: #fff;
 }
 

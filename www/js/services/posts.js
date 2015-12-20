@@ -2,7 +2,7 @@ angular.module('bahnhof.services')
 
 
 
-.factory('Posts', ['$filter', '$http', 'ENV',  function($filter, $http, ENV) {
+.factory('Posts', ['$filter', '$http', '$q', 'ENV',  function($filter, $http, $q, ENV) {
 
   var posts = [];
   
@@ -17,13 +17,20 @@ angular.module('bahnhof.services')
       });
     },
     
-    getBySlug: function(slugId) {
-      return $http({
-          url: posts_endpoint + '/' + slugId, 
-          method: "GET"
-       }).then(function(response){
-        return response.data.post[0];
-      });
+    getBySlug: function(slug) {
+      post = $filter('filter')(posts, {slug: slug}, true)
+      if (post.length == 1) {
+        return $q(function(resolve, reject) {
+            resolve(post[0]);
+          })
+      } else {
+        return $http({
+            url: posts_endpoint + '/' + slug, 
+            method: "GET"
+         }).then(function(response){
+          return response.data.post[0];
+        });
+      }
     },
     
     get: function(slug) {

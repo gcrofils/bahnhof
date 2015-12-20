@@ -25,6 +25,7 @@
     <!-- your app's js -->
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/jquery.flexslider.min.js"></script>
+    <script src="js/vendor/holder.min.js"></script>
     
     <script src="js/desktop/app.js"></script>
     <script src="js/config-dev.js"></script>
@@ -32,17 +33,19 @@
     <script src="js/services.js"></script>
     <script src="js/services/posts.js"></script>
     <script src="js/services/categories.js"></script>
+    <script src="js/services/preloader.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/directives/bh-app-loading.js"></script>
     <script src="js/directives/bh-scroll-top.js"></script>
     <script src="js/directives/bh-post.js"></script>
+    <script src="js/directives/bh-holder.js"></script>
     
     
   </head>
   <body ng-app="bahnhof" ng-controller="bahnhofCtrl" bh-scroll-top="100" ng-class="{'navbar-minified':minifyNavbar}">
     
     <div ng-include="'/templates/desktop/navbar.html'"></div>
-    <div class="container">
+    <div class="container main-container">
       <div ui-view></div>
     </div>
 
@@ -51,10 +54,10 @@
     <div class="bh-app-loading">
       <style type="text/css">
       div.bh-app-loading div.animated-container {
-        background-color: #FAFAF5 ;
+        background-color: #FFF ;
         bottom: 0px ;
         left: 0px ;
-        opacity: 1.0 ;
+        opacity: 1 ;
         position: fixed ;
         right: 0px ;
         top: 0px ;
@@ -90,13 +93,16 @@
         line-height: 14px ;
         margin: 0px 0px 0px 0px ;
       }
+      div.bh-app-loading p.spinning {
+        margin: 20px 0px 0px 0px ;
+      }
       </style>
 
       <div class="animated-container">
         <div class="messaging">
-          <h1>App is Loading</h1>
+          <h1>China India Dialogue is Loading</h1>
           <p>Please stand by!</p>
-          <p><img src="/img/loading.gif" /></p>
+          <p class="spinning"><img src="/img/loading.gif" /></p>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ angular.module('bahnhof.directives')
     // TODO: Use post.id if slug undefined
     Posts.getBySlug(slug).then(function(post){
       vm.post = post;
+      vm.loaded = true;
     });
   }
 

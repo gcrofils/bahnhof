@@ -52,6 +52,7 @@ angular.module('bahnhof.controllers', [])
 })
 
 .controller('HomeCategoryCtrl', function($scope, $document, Categories, Posts) {
+  $scope.loading = true;
   $scope.get = function(categorySlug, limit) {
   $scope.categories.then(function(){
     $scope.category = Categories.get(categorySlug);
@@ -64,6 +65,7 @@ angular.module('bahnhof.controllers', [])
             });
         });
       }
+      $scope.loading = false;
     });    
   }); 
  };
