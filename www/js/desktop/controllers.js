@@ -12,7 +12,7 @@ angular.module('bahnhof.controllers', [])
 .controller('HomeCtrl', function($scope, $filter, Categories, Posts) {
   
   searchString = function(categories) {
-    var c = {spotlight: 5, business: 2, policy: 1, industry: 3, internet: 3, society: 3, column: 4, oneroadonebelt: 1, environment: 1};
+    var c = {spotlight: 5, business: 2, policy: 1, industry: 3, internet: 3, society: 3, column: 4, oneroadonebelt: 1, environment: 1, culture: 1};
     var q = [];
     //if (angular.isArray($scope.categories)) {
       angular.forEach(c, function(num, slug) {
@@ -40,28 +40,19 @@ angular.module('bahnhof.controllers', [])
   
   $scope.get = function(categorySlug){
     if ($scope.categories.length > 0) {
-      
-      var category = $filter('filter')($scope.categories, {slug: categorySlug}, true)[0];
-      
-      data = {
-        category: category
-      }
-      
       posts = myPosts(searchString($scope.categories));
+      var category = $filter('filter')($scope.categories, {slug: categorySlug}, true)[0];
+      data = { category: category }
       if ($scope.homePosts && angular.isFunction($scope.homePosts.then)) {
         $scope.homePosts.then(function(response) {
           posts = response.data;
-          console.log(category.id);
           data['posts']= $filter('filter')(posts, {category_id: category.id}, true);
           return data;
         })
       } else {
         data['posts']= $filter('filter')(posts, {category_id: category.id}, true);
         return data;
-      }
-      
-
-      
+      } 
     }
     
   }
@@ -77,12 +68,7 @@ angular.module('bahnhof.controllers', [])
   
 })
 
-.controller('HomeCategoryCtrl', function($scope, $filter) {
-  debugger
-  $scope.get = function(categorySlug, limit) {
-    $scope.posts = $filter('filter')($scope.homePosts, {category_id: 0}, true);
-  }
-})
+
 
 // .controller('HomeCategoryCtrl', function($scope, $document, Categories, Posts) {
 //   $scope.loading = true;
