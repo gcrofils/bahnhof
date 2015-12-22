@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <ul class="nav" ng-controller="CategoriesCtrl">
+            <ul class="nav">
               <li ng-repeat="category in categories | toArray |  filter:{footer1: true}:true  ">
                 <a href="#/category/{{category.slug}}">{{category.label}}</a>
               </li>
             </ul>
           </div>
           <div class="col-md-2">
-            <ul class="nav" ng-controller="CategoriesCtrl">
+            <ul class="nav">
               <li ng-repeat="category in categories | toArray |  filter:{footer2: true}:true  ">
                 <a href="#/category/{{category.slug}}">{{category.label}}</a>
               </li>

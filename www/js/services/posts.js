@@ -36,6 +36,18 @@ angular.module('bahnhof.services')
     get: function(slug) {
       return $filter('filter')(posts, {slug: slug}, true)[0];
     },
+    
+    search: function(search) {
+      return $http({
+          url: posts_endpoint, 
+          method: "GET",
+          params: {q: search}
+       }).then(function(response){
+        posts = response.data;
+        return response;
+      });
+    },
+    
     getbyCategory: function(categoryId, offset, limit) {
       //return $filter('filter')(posts, {category_id: categoryId}, true);
       return $http({

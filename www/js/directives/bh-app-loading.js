@@ -5,8 +5,9 @@ angular.module('bahnhof.directives')
     restrict: "C"
   });
   function link( scope, element, attributes ) {
-    scope.categories.then(function(){
+    console.log ("observe directive");
+    //scope.categories.then(function(){
       element.remove();
-    });
+      //});
   }
  })

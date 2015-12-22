@@ -3,26 +3,117 @@ angular.module('bahnhof.controllers', [])
 
 
 .controller('bahnhofCtrl', function($scope, $stateParams, Categories) {
-  $scope.categories = Categories.all();
-})
-
-.controller('HomeCtrl', function($scope, $document, Categories, Posts) {
-})
-
-.controller('CategoriesCtrl', function($scope, $location, $stateParams, Categories) {
-  $scope.isActive = function(route) {
-    return route === $location.path();
-  }
-  $scope.categories.then(function(categories){
+  $scope.categories = []
+  Categories.all().then(function(categories){
     $scope.categories = categories;
-  });
+  })
 })
+
+.controller('HomeCtrl', function($scope, $filter, Categories, Posts) {
+  
+  searchString = function(categories) {
+    var c = {spotlight: 5, business: 2, policy: 1, industry: 3, internet: 3, society: 3, column: 4, oneroadonebelt: 1, environment: 1};
+    var q = [];
+    //if (angular.isArray($scope.categories)) {
+      angular.forEach(c, function(num, slug) {
+        category = Categories.get(slug);
+        q.push(category.id + ',' + num);
+      });
+      return q.join('|');
+    //}
+  }
+  
+  myPosts = function(searchString) {
+    if (angular.isArray($scope.homePosts))
+      return $scope.homePosts;
+    if (angular.isUndefined($scope.homePosts))
+      $scope.homePosts = Posts.search(searchString);
+    if ($scope.homePosts && angular.isFunction($scope.homePosts.then)) {
+      return $scope.homePosts.then(function(response) {
+        $scope.homePosts = response.data;
+        return response.data;
+      })
+    }
+  }
+
+    
+  
+  $scope.get = function(categorySlug){
+    if ($scope.categories.length > 0) {
+      
+      var category = $filter('filter')($scope.categories, {slug: categorySlug}, true)[0];
+      
+      data = {
+        category: category
+      }
+      
+      posts = myPosts(searchString($scope.categories));
+      if ($scope.homePosts && angular.isFunction($scope.homePosts.then)) {
+        $scope.homePosts.then(function(response) {
+          posts = response.data;
+          console.log(category.id);
+          data['posts']= $filter('filter')(posts, {category_id: category.id}, true);
+          return data;
+        })
+      } else {
+        data['posts']= $filter('filter')(posts, {category_id: category.id}, true);
+        return data;
+      }
+      
+
+      
+    }
+    
+  }
+  
+  
+  $scope.get_category = function (categorySlug) {
+    var c = {} 
+    if (angular.isArray($scope.categories)) {
+      c = $filter('filter')($scope.categories, {slug: categorySlug}, true)[0]
+    }
+    return c;
+  }
+  
+})
+
+.controller('HomeCategoryCtrl', function($scope, $filter) {
+  debugger
+  $scope.get = function(categorySlug, limit) {
+    $scope.posts = $filter('filter')($scope.homePosts, {category_id: 0}, true);
+  }
+})
+
+// .controller('HomeCategoryCtrl', function($scope, $document, Categories, Posts) {
+//   $scope.loading = true;
+//   $scope.get = function(categorySlug, limit) {
+//   $scope.categories.then(function(){
+//     $scope.category = Categories.get(categorySlug);
+//     Posts.getbyCategory($scope.category.id, 0, limit).then(function(response){
+//       $scope.posts = response.data;
+//       if (categorySlug == 'spotlight') {
+//         $document.ready(function() {
+//           $('.flexslider').flexslider({
+//               animation: "slide"
+//             });
+//         });
+//       }
+//       $scope.loading = false;
+//     }), function (response) {
+//       console.log ('HomeCategoryCtrl ERROR');
+//       console.log (response);
+//   };
+//   });
+//  };
+// })
+
+
 
 .controller('CategoryCtrl', function($scope, $stateParams, Categories, Posts) {
   
   function load(page) {
     
-    var limit = 20;
+    var limit = 15;
     var offset = limit * (page - 1);
     var isComplete = $scope.pagination && $scope.pagination.current_page >= $scope.pagination.total_pages;
     
@@ -51,25 +142,7 @@ angular.module('bahnhof.controllers', [])
   load($stateParams.page ? parseInt($stateParams.page, 10) : 1);
 })
 
-.controller('HomeCategoryCtrl', function($scope, $document, Categories, Posts) {
-  $scope.loading = true;
-  $scope.get = function(categorySlug, limit) {
-  $scope.categories.then(function(){
-    $scope.category = Categories.get(categorySlug);
-    Posts.getbyCategory($scope.category.id, 0, limit).then(function(response){
-      $scope.posts = response.data;
-      if (categorySlug == 'spotlight') {
-        $document.ready(function() { 
-          $('.flexslider').flexslider({
-              animation: "slide"
-            });
-        });
-      }
-      $scope.loading = false;
-    });    
-  }); 
- };
-})
+
 
 .controller('DropdownCtrl', function ($scope, $log) {
   $scope.items = [

@@ -39541,6 +39541,8 @@ var $$AnimateQueueProvider = ['$animateProvider', function($animateProvider) {
       forEach(children, function(child) {
         var state = parseInt(child.getAttribute(NG_ANIMATE_ATTR_NAME));
         var animationDetails = activeAnimationsLookup.get(child);
+        console.log('ionic.bundle.js line 39544');
+        console.log(animationDetails);
         switch (state) {
           case RUNNING_STATE:
             animationDetails.runner.end();
