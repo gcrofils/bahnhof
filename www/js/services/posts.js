@@ -5,6 +5,7 @@ angular.module('bahnhof.services')
 .factory('Posts', ['$filter', '$http', '$q', 'ENV',  function($filter, $http, $q, ENV) {
 
   var posts = [];
+  var homePosts = [];
   
   var posts_endpoint = ENV.apiEndpoint + "posts";
 
@@ -38,14 +39,19 @@ angular.module('bahnhof.services')
     },
     
     search: function(search) {
+      if (homePosts.length > 0) {
+        return homePosts;
+      } else {
       return $http({
           url: posts_endpoint, 
           method: "GET",
           params: {q: search}
        }).then(function(response){
         posts = response.data;
+        homePosts = posts;
         return response;
       });
+    }
     },
     
     getbyCategory: function(categoryId, offset, limit) {
