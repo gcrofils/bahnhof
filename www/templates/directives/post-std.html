@@ -1,19 +1,6 @@
+
 <div class="row">
-  <div class="col-md-12">
-    <h1 class="post-title">{{vm.post.title}}</h1>
-    <p>
-      <span class="category-color"><i>By</i></span>
-      <span class="post-author">{{vm.post.author}}</span>
-      <span class="post-published">{{vm.post.published_at}}</span>
-    </p>
-  </div>
-  <div class="clearfix"></div>
-  <div class="col-md-12">
-    <img class="img-responsive" ng-src="{{vm.post.featured_image_url}}" />
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-2">
+  <div class="col-md-2 visible-md-inline-block visible-lg-inline-block">
     <ul class="social">
       <li class="social-facebook">Facebook</li>
       <li class="social-twitter">Twitter</li>
@@ -31,6 +18,14 @@
     </ul>
   </div>
   <div class="col-md-10">
-    <div class="post-body" ng-bind-html="vm.post.body"></div>
+      <h1 class="post-title">{{vm.post.title}}</h1>
+      <p>
+        <span class="category-color"><i>By</i></span>
+        <span class="post-author">{{vm.post.author}}</span>
+        <span class="post-published">{{vm.post.published_at}}</span>
+        <span class="visible-xs-inline-block" ng-repeat="s in ['facebook', 'twitter', 'email']"><img ng-src="/img/cid/icon-{{s}}.png"></span>
+      </p>
+      <img class="img-responsive" ng-src="{{vm.post.featured_image_url}}" />
+      <div class="post-body" ng-bind-html="vm.post.body"></div>
   </div>
 </div>

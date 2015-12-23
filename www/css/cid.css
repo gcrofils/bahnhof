@@ -361,6 +361,9 @@ li.social-wechat > div > p > span {
 body {
   padding: 210px 0 0 0;
 }
+ ul.social {
+    position: fixed;
+  }
 }
 
 @media (max-width: 991px) {
