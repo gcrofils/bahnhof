@@ -1,19 +1,19 @@
-.flex-control-nav {
+/*.flex-control-nav {
   top: 20px;
 }
 
 .flex-control-nav li {}
-  
+
 .flex-control-paging li a {
   background: #e60012;
   background: rgba(230, 0, 18, 1);
 }
-  
+
 .flex-control-paging li a:hover {
   background: #fff;
   background: rgba(255, 255, 255, 1);
 }
-  
+
 .flex-control-paging li a.flex-active {
   background: #fff;
   background: rgba(255, 255, 255, 0.5);
@@ -23,11 +23,21 @@
   position: relative;
 }
 
+*/
+
 .flex-caption {
-  position: absolute;
-  bottom: 0px;
-  width: 742px;
-  background: rgba(230,0,18,.8);
+  padding: 2%;
+  left: 0;
+  bottom: -130px;
+  background: rgba(0,0,0,.1);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/*.flex-caption {
+  background: rgba(230,0,18,.5);
 }
 
 .flex-caption, .flex-caption a {
@@ -36,7 +46,4 @@
 
 .flex-caption h2, .flex-caption p {
   padding-left: 2%;
-}
-
-  
-  
+}*/

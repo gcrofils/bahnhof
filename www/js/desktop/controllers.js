@@ -2,11 +2,14 @@ angular.module('bahnhof.controllers', [])
 
 
 
-.controller('bahnhofCtrl', function($scope, $stateParams, Categories) {
+.controller('bahnhofCtrl', function($scope, $location, $stateParams, Categories) {
   $scope.categories = []
   Categories.all().then(function(categories){
     $scope.categories = categories;
-  })
+  });
+  $scope.isActive = function(route) {
+    return route === $location.path();
+  }
 })
 
 .controller('HomeCtrl', function($scope, $filter, Categories, Posts) {
@@ -44,9 +47,7 @@ angular.module('bahnhof.controllers', [])
       var category = $filter('filter')($scope.categories, {slug: categorySlug}, true)[0];
       if ($scope.homePosts && angular.isFunction($scope.homePosts.then)) {
         $scope.homePosts.then(function(response) {
-          p =  $filter('filter')(response.data, {category_id: category.id}, true);
-          console.log (categorySlug + p.length)
-          return p;
+          return $filter('filter')(response.data, {category_id: category.id}, true);
         })
       } else {
         return $filter('filter')(posts, {category_id: category.id}, true);
@@ -110,8 +111,8 @@ angular.module('bahnhof.controllers', [])
     if (!isComplete) {
       
       $scope.loading = true;
-    
-      $scope.categories.then(function(){
+      
+      Categories.all().then(function(){
         $scope.category = Categories.get($stateParams.categorySlug);
       
         Posts.getbyCategory($scope.category.id, offset, limit).then(function(response){
@@ -135,18 +136,9 @@ angular.module('bahnhof.controllers', [])
 
 
 .controller('DropdownCtrl', function ($scope, $log) {
-  $scope.items = [
-    'The first choice!',
-    'And another choice for you.',
-    'but wait! A third!'
-  ];
 
   $scope.status = {
     isopen: false
-  };
-
-  $scope.toggled = function(open) {
-    $log.log('Dropdown is now: ', open);
   };
 
   $scope.toggleDropdown = function($event) {
