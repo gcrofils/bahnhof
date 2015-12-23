@@ -71,8 +71,12 @@
 </div>
 
 <div class='row row-eq-height'>
-  <div class='col-md-4 row-eq-height'><bh-home-category template="std" bh-posts="{{::getP('culture')}}" bh-category="{{::getC('culture')}}"></bh-home-category></div>
-  <div class='col-md-8 row-eq-height'><bh-home-category template="std" bh-category="{{::getC('travel')}}"></bh-home-category></div>
+  <div class='col-md-4 row-eq-height'>
+    <bh-home-category template="std" bh-posts="{{::getP('culture')}}" bh-category="{{::getC('culture')}}"></bh-home-category>
+  </div>
+  <div class='col-md-8 row-eq-height'>
+    <bh-home-category template="carousel" bh-posts="{{::getP('travel')}}" bh-category="{{::getC('travel')}}"></bh-home-category>
+  </div>
   
 </div>
 

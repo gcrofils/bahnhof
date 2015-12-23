@@ -17,7 +17,7 @@ angular.module('bahnhof.controllers', [])
   $scope.loading=true;
   
   searchString = function(categories) {
-    var c = {spotlight: 5, business: 2, policy: 1, industry: 3, internet: 3, society: 3, column: 4, oneroadonebelt: 1, environment: 1, culture: 1};
+    var c = {spotlight: 5, business: 2, policy: 1, industry: 3, internet: 3, society: 3, column: 4, oneroadonebelt: 1, environment: 1, culture: 1, travel: 6};
     var q = [];
     //if (angular.isArray($scope.categories)) {
       angular.forEach(c, function(num, slug) {
