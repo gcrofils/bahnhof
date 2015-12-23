@@ -11,6 +11,8 @@ angular.module('bahnhof.controllers', [])
 
 .controller('HomeCtrl', function($scope, $filter, Categories, Posts) {
   
+  $scope.loading=true;
+  
   searchString = function(categories) {
     var c = {spotlight: 5, business: 2, policy: 1, industry: 3, internet: 3, society: 3, column: 4, oneroadonebelt: 1, environment: 1, culture: 1};
     var q = [];
@@ -36,25 +38,27 @@ angular.module('bahnhof.controllers', [])
     }
   }
 
-    
-  
-  $scope.get = function(categorySlug){
+  $scope.getP = function(categorySlug){
     if ($scope.categories.length > 0) {
       posts = myPosts(searchString($scope.categories));
       var category = $filter('filter')($scope.categories, {slug: categorySlug}, true)[0];
-      data = { category: category }
       if ($scope.homePosts && angular.isFunction($scope.homePosts.then)) {
         $scope.homePosts.then(function(response) {
-          posts = response.data;
-          data['posts']= $filter('filter')(posts, {category_id: category.id}, true);
-          return data;
+          p =  $filter('filter')(response.data, {category_id: category.id}, true);
+          console.log (categorySlug + p.length)
+          return p;
         })
       } else {
-        data['posts']= $filter('filter')(posts, {category_id: category.id}, true);
-        return data;
+        return $filter('filter')(posts, {category_id: category.id}, true);
       } 
     }
+    } 
     
+  
+  $scope.getC = function(categorySlug){
+    if ($scope.categories.length > 0) {
+      return $filter('filter')($scope.categories, {slug: categorySlug}, true)[0];
+    }
   }
   
   

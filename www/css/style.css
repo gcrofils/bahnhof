@@ -28,7 +28,7 @@ p.loading {
 }
 
 @media (min-width: 992px) {
-.row-eq-height {
+.row-eq-height, bh-home-category {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
